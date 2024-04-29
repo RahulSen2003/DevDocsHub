@@ -6,11 +6,16 @@ import SignUpPage from './pages/SignUpPage'
 import ExplorePage from './pages/ExplorePage'
 import LikesPage from './pages/LikesPage'
 import {Toaster} from 'react-hot-toast'
+import { useAuthContext } from './context/AuthContext'
 
 
 function App() {
 
+	const { authUser } = useAuthContext();
+	console.log("Authenticated user:", authUser);
+
   return (
+	
     <div className='flex'>
 			<Sidebar />
 			<div className='max-w-5xl my-5 text-white mx-auto transition-all duration-300 flex-1'>
